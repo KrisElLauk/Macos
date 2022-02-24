@@ -3,12 +3,15 @@ package io.codelex.arithmetic.practice;
 public class SumAverageRunningInt {
     public static void main(String[] args) {
         int sum = 0;
-        int average;
-        int lowerBound = 1;
-        int upperBound = 100;
+        float average;
+        float lowerBound = 1f;
+        float upperBound = 100f;
 
-        for (int number = lowerBound; number <= upperBound; ++number) {
+        for (float number = lowerBound; number <= upperBound; ++number) {
             sum += number;
         }
+        average = sum / upperBound;
+        System.out.println(sum);
+        System.out.println(average);
     }
 }
