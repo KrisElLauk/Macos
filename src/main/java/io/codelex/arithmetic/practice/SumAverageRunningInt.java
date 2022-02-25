@@ -11,7 +11,7 @@ public class SumAverageRunningInt {
             sum += number;
         }
         average = sum / upperBound;
-        System.out.println(sum);
-        System.out.println(average);
+        System.out.println("The sum of 1 to 100 is " + sum);
+        System.out.println("The average is " + average);
     }
 }
