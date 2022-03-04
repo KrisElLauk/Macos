@@ -10,7 +10,7 @@ public class Hangman {
 
         Scanner input = new Scanner(System.in);
 
-        String name = "pineapple";
+        String name = "grapefruit";
         int tryCount = 5;
         String missedLetters = "";
         String guessedLetters = "";
