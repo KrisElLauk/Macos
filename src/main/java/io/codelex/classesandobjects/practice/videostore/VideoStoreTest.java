@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class VideoStoreTest {
     private static final int COUNT_OF_MOVIES = 3;
+    private static VideoStore movieList = new VideoStore();
 
     public static void main(String[] args) {
         final Scanner keyboard = new Scanner(System.in);
@@ -32,7 +33,7 @@ public class VideoStoreTest {
                 default:
                     break;
             }
-
+            System.out.println(movieList);
         }
     }
 
@@ -40,17 +41,23 @@ public class VideoStoreTest {
         for (int i = 0; i < COUNT_OF_MOVIES; i++) {
             System.out.println("Enter movie name");
             String movieName = scanner.next();
+            movieName += scanner.nextLine();
             System.out.println("Enter rating");
-            int rating = scanner.nextInt();
-            //todo - add video
+            double rating = scanner.nextDouble();
+            movieList.addVideo(movieName);
+            movieList.rating(movieName, rating);
         }
     }
 
     private static void rentVideo(Scanner scanner) {
-        //todo - rent video
+        System.out.println("Which movie do you wish to rent?");
+        String wantedMovie = scanner.next();
+        movieList.checkOut(wantedMovie);
     }
 
     private static void returnVideo(Scanner scanner) {
-        //todo - return video
+        System.out.println("Which movie do you wish to return?");
+        String returnMovie = scanner.next();
+        movieList.returnedVideo(returnMovie);
     }
 }
