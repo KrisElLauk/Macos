@@ -4,19 +4,23 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Odometer car = new Odometer();
+        FuelGauge fuelGauge = new FuelGauge(35);
+        Odometer carOdometer = new Odometer(0, fuelGauge);
 
-        System.out.println("Filling up your car.");
-        car.fillingCar(55, 70);
-        System.out.println("Tank is full.");
+        System.out.println(fuelGauge.getCurrentFuel());
+        System.out.println(carOdometer.getMileage());
 
-        car.addingMileage(152190);
-        for (int i = 0; i >= car.mileage; i++) {
-
-            System.out.println(car.fuelConsumption());
+        for (double i = fuelGauge.getCurrentFuel(); i < FuelGauge.maxFuel; i++) {
+            if (fuelGauge.getCurrentFuel() < FuelGauge.maxFuel) {
+                fuelGauge.fillingCar();
+            }
         }
 
+        while (fuelGauge.getCurrentFuel() > 0) {
+            carOdometer.addMileage();
+            System.out.println("Fuel in tank: " + fuelGauge.getCurrentFuel() + "\nMileage: " + carOdometer.getMileage());
+        }
     }
 }
 
-/////////////////////////NEPABEIGTS///////////////////////
+///////////////////////////KAUT KAS PĀRTAISĪTS UN PUSLĪDZ STRĀDĀJOŠ/////////////////////////

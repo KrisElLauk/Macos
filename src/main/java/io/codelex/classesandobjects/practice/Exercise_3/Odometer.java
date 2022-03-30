@@ -1,25 +1,31 @@
 package io.codelex.classesandobjects.practice.Exercise_3;
 
-public class Odometer extends FuelGauge {
+public class Odometer {
 
-    int mileage;
-    int maxMileage = 999999;
+    private double mileage;
+    private double startingMileage;
+    private double maxMileage = 999999;
+    private final double kmPerLiters = 10;
+    private FuelGauge fuelGauge;
 
-    public void addingMileage(int mileage) {
+    public Odometer(double mileage, FuelGauge fuelGauge) {
         this.mileage = mileage;
-        for (int i = 0; i < maxMileage; i++) {
-            if (mileage <= maxMileage) {
-                mileage = mileage + i;
-            } else if (mileage > maxMileage) {
-                mileage = 0;
-            }
-        }
+        this.fuelGauge = fuelGauge;
     }
 
-    public int fuelConsumption() {
-        this.mileage = mileage + 10;
-        System.out.println(burningFuel());
+    public double getMileage() {
+        return mileage;
+    }
 
-        return 0;
+    public void addMileage() {
+        if (mileage < maxMileage) {
+            this.mileage++;
+        } else {
+            mileage = 0;
+        }
+        double kmDriven = mileage - startingMileage;
+        if (kmDriven % kmPerLiters == 0) {
+            fuelGauge.burningFuel();
+        }
     }
 }
