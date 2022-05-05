@@ -13,11 +13,11 @@ public class Exercise2 {
 
 
         //todo - complete loop to multiply i with itself n times, it is NOT allowed to use Math.pow()
-        for (i = 0; i <= n; i++) {
-            System.out.println(i * n);;
+        for (i = 0; i < n; i++) {
+            System.out.println(i * i);
+            ;
         }
 
     }
 
 }
-//////////////////reāli nezinu/////////////////

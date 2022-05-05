@@ -1,5 +1,6 @@
 package io.codelex.loops.practice;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class RollTwoDice {
@@ -18,13 +19,14 @@ public class RollTwoDice {
 
 
         while (true) {
-            int rollDice = (int) Math.floor(Math.random() * 6) + 1;
-            int rollDice2 = (int) Math.floor(Math.random() * 6) + 1;
+            Random roll = new Random();
+            int rollDice = roll.nextInt(6) + 1;
+            int rollDice2 = roll.nextInt(6) + 1;
             int sum = rollDice + rollDice2;
 
             if (sum != num) {
                 System.out.println(rollDice + " and " + rollDice2 + " = " + sum);
-            } else if (sum == num) {
+            } else {
                 System.out.println(rollDice + " and " + rollDice2 + " = " + sum);
                 break;
             }

@@ -14,7 +14,7 @@ public class Exercise_5 {
         String str2 = input.nextLine();
 
         String dots = "";
-        String sentence = str1 + "" + str2;
+        String sentence = str1 + str2;
         int length = sentence.length();
         int dotCounter = 0;
 

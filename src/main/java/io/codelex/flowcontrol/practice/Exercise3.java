@@ -10,7 +10,7 @@ public class Exercise3 {
         System.out.print("Input an integer number less than ten billion: ");
 
         long n = in.nextLong();
-        
+
 
         //todo - check if Long
         if (n > Integer.MAX_VALUE) {
@@ -25,7 +25,7 @@ public class Exercise3 {
                 int digits = 1;
                 if (n >= 10 && n <= 99) {
                     digits = 2;
-                } else if (n >= 100 && n <= 999) {
+                } else if (n <= 999) {
                     digits = 3;
                 } else if (n >= 1000 && n <= 9999) {
                     digits = 4;
