@@ -11,6 +11,7 @@ public class Main_test {
         double depositSum = 0;
         double withdrawSum = 0;
         double monthlyInterestRate = 0;
+        double balance = 0;
 
         Scanner input = new Scanner(System.in);
 
@@ -31,11 +32,14 @@ public class Main_test {
             account1.withdraw(withdraw);
             withdrawSum += withdraw;
             account1.monthlyInterest();
+            monthlyInterestRate = account1.getTotalInterest();
+            balance = account1.getBalance();
+
 
         }
-        System.out.println("Total deposited: $" + depositSum);
-        System.out.println("Total withdrawn: $" + withdrawSum);
-        System.out.println("Interest earned: $" + monthlyInterestRate);
-        System.out.println("Ending balance: $" + account1);
+        System.out.printf("Total deposited: $%.2f", depositSum);
+        System.out.printf("\nTotal withdrawn: $%.2f", withdrawSum);
+        System.out.printf("\nInterest earned: $%.2f", monthlyInterestRate);
+        System.out.printf("\nEnding balance: $%.2f", balance);
     }
 }

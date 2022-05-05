@@ -35,6 +35,14 @@ public class SavingsAccount {
         balance += (balance * monthlyInterest);
     }
 
+    public double getTotalInterest() {
+        return totalInterest;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
     @Override
     public String toString() {
         return "" + balance;
