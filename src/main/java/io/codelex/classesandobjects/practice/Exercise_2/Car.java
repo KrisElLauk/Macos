@@ -16,7 +16,7 @@ public class Car {
         return liters / (endingOdo - startOdo) * 100;
     }
 
-    public boolean gasHog() {
+    public final boolean gasHog() {
         if (calculateConsumption() >= 15) {
             return true;
         }

@@ -6,6 +6,7 @@ public class SavingsAccount {
     private double annualInterestRate;
     private double withdrawMoney;
     private double depositedMoney;
+    private double totalInterest;
 
 
     public SavingsAccount(double balance) {
@@ -21,15 +22,17 @@ public class SavingsAccount {
     }
 
     public double withdraw(double withdrawMoney) {
-        return balance - withdrawMoney;
+        return balance -= withdrawMoney;
     }
 
     public double deposit(double depositedMoney) {
-        return balance + depositedMoney;
+        return balance += depositedMoney;
     }
 
-    public double monthlyInterest() {
-        return (annualInterestRate / 12) * balance + balance;
+    public void monthlyInterest() {
+        double monthlyInterest = (annualInterestRate / 12);
+        totalInterest += (balance * monthlyInterest);
+        balance += (balance * monthlyInterest);
     }
 
     @Override

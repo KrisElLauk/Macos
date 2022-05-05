@@ -2,10 +2,10 @@ package io.codelex.classesandobjects.practice.Exercise_7;
 
 public class Dog {
 
-    String name;
-    String sex;
-    String father;
-    String mother;
+    private String name;
+    private String sex;
+    private String father;
+    private String mother;
 
     public Dog(String name, String sex) {
         this.name = name;
@@ -49,6 +49,13 @@ public class Dog {
         } else {
             System.out.println(father);
         }
+    }
+
+    public String mothersName() {
+        if (mother == null) {
+            return "Unknown";
+        }
+        return mother;
     }
 
     public void hasSameMotherAs(Dog dog) {

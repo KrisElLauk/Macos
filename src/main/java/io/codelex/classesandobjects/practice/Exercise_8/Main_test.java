@@ -20,6 +20,7 @@ public class Main_test {
         account1.setAnnualInterestRate(input.nextDouble());
         System.out.print("How long has the account been opened?: ");
         int timeOpen = input.nextInt();
+
         for (int i = 1; i <= timeOpen; i++) {
             System.out.print("Enter amount deposited for month " + i + ": ");
             deposit = input.nextDouble();
@@ -29,7 +30,7 @@ public class Main_test {
             withdraw = input.nextDouble();
             account1.withdraw(withdraw);
             withdrawSum += withdraw;
-            monthlyInterestRate += account1.monthlyInterest();
+            account1.monthlyInterest();
 
         }
         System.out.println("Total deposited: $" + depositSum);
