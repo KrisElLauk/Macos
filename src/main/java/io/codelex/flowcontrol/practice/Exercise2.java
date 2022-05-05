@@ -16,6 +16,14 @@ public class Exercise2 {
 
         System.out.print("Input the 3rd number: ");
         int num3 = in.nextInt();
+
+        if (num1 > num2 && num1 > num3) {
+            System.out.println("1st number " + num1 + " is the largest number.");
+        } else if (num2 > num3) {
+            System.out.println("2nd number " + num2 + " is the largest number.");
+        } else {
+            System.out.println("3rd number " + num3 + " is the largest number.");
+        }
         
         /*
         todo - expected output:
