@@ -8,7 +8,7 @@ public class TicTacToe {
 
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
-        boolean x = true;
+        boolean xTurn = true;
         boolean gameEnded = false;
 
         initBoard();
@@ -16,14 +16,14 @@ public class TicTacToe {
 
         while (!gameEnded) {
             drawBoard(board);
-            if (x) {
+            if (xTurn) {
                 System.out.print("'X', choose your location (row, column): ");
             } else {
                 System.out.print("'O', choose your location (row, column): ");
             }
 
             char turn = ' ';
-            if (x) {
+            if (xTurn) {
                 turn = 'X';
             } else {
                 turn = 'O';
@@ -58,7 +58,7 @@ public class TicTacToe {
                     System.out.println("The game is a tie.");
                     gameEnded = true;
                 } else {
-                    x = !x;
+                    xTurn = !xTurn;
                 }
             }
         }
@@ -67,8 +67,8 @@ public class TicTacToe {
     }
 
     public static void drawBoard(char[][] board) {
-        for(int i = 0; i < 3; i++) {
-            for(int j = 0; j < 3; j++) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
                 System.out.print(board[i][j]);
             }
             System.out.println();

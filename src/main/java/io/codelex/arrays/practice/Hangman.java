@@ -1,7 +1,5 @@
 package io.codelex.arrays.practice;
 
-import java.util.Objects;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Hangman {
@@ -41,10 +39,10 @@ public class Hangman {
 
     }
 
-    public static void printOutWord(String name, String guessedLetters) {
-        for (char a : name.toCharArray()) {
-            if (guessedLetters.contains(String.valueOf(a))) {
-                System.out.println(a);
+    private static void printOutWord(String name, String guessedLetters) {
+        for (char guess : name.toCharArray()) {
+            if (guessedLetters.contains(String.valueOf(guess))) {
+                System.out.println(guess);
             } else {
                 System.out.println('_');
             }
@@ -52,7 +50,7 @@ public class Hangman {
         System.out.println();
     }
 
-    public static boolean hasWon(String name, String guessedLetters) {
+    private static boolean hasWon(String name, String guessedLetters) {
         boolean won = true;
         for (char a : name.toCharArray()) {
             if (!guessedLetters.contains(String.valueOf(a))) {
@@ -63,7 +61,7 @@ public class Hangman {
         return won;
     }
 
-    public static void printOutTurn(String name, String guessedLetters, String missedLetters) {
+    private static void printOutTurn(String name, String guessedLetters, String missedLetters) {
         System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
         System.out.print("Word: ");
         printOutWord(name, guessedLetters);
